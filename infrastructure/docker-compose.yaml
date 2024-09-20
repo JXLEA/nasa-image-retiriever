@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  wiremock:
+    image: wiremock/wiremock:latest
+    ports:
+      - "8083:8080"
+
+  artemis:
+    image: apache/activemq-classic:latest
+    environment:
+      ARTEMIS_USERNAME: myuser
+      ARTEMIS_PASSWORD: mypassword
+    ports:
+      - "8161:8161"  # Web Server
+      - "61616:61616"  # Core,MQTT,AMQP,HORNETQ,STOMP,OPENWIRE
+      - "5445:5445"  # HORNETQ,STOMP
+      - "5672:5672"  # AMQP
+      - "1883:1883"  # MQTT
+      - "61613:61613"  # STOMP

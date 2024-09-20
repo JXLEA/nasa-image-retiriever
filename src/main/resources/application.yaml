@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+
+spring:
+  application:
+    name: nasa-image-retrieve-service
+  activemq:
+    broker-url: "tcp://localhost:61616"
+
+nasa:
+  url: "//api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=14&api_key=d9VnYCEsksO1RH11pg0XuViFVYH73XcuAjoxXBWb"
+#  api-sol: 14
+#  api-key: d9VnYCEsksO1RH11pg0XuViFVYH73XcuAjoxXBWb
+#  api-url: //api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos
+#  url-template: "{{nasa.api-url}}?sol={{nasa.api-sol}}&api_key={{nasa.api-key}}"
+
+user:
+  home: Users/Oleksii_Nosov
+
+camel:
+  springboot:
+    main-run-controller: true
